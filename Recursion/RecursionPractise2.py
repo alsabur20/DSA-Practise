@@ -10,12 +10,14 @@ s = 'abcd'
 
 # Find the 1st and last occurence of an element in string
 
-first=-1
+first = -1
 last = -1
+
+
 def findOccurance(str, idx, element):
-    global first,last
-    if idx==len(str):
-        print(first,last)
+    global first, last
+    if idx == len(str):
+        print(first, last)
         return
     currentChar = str[idx]
     if currentChar == element:
@@ -23,6 +25,18 @@ def findOccurance(str, idx, element):
             first = idx
         else:
             last = idx
-    findOccurance(str,idx+1,element)
-    
-findOccurance("abaacdaefaah",0,'a')
+    findOccurance(str, idx+1, element)
+
+# findOccurance("abaacdaefaah",0,'a')
+
+# Check if an array is sorted (Strictly increasing)
+
+
+def isSorted(arr, idx):
+    if idx == len(arr)-1:
+        return True
+    if arr[idx] >= arr[idx+1]:
+        return False
+    return isSorted(arr, idx+1)
+
+# print(isSorted([1,2,3,4],0))
